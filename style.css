@@ -1,0 +1,59 @@
+/*reset default margin and padding*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: 'Crimson Pro', serif;
+    font-size: 28px;
+    color: #75E6DA;
+    background: #05445E;
+    
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/*Define the initial state of the h1*/
+.zoom-in-out {
+    font-size: 60px;
+    transform: scale(1.2);/*Zoomed-in state (scale 12-%)*/
+    animation: zoomInOut 3.5s forwards;
+}
+
+
+/* Define the keyframes for the zoom in and out animation */
+@keyframes zoomInOut {
+    0% { transform: scale(6.5); } /* Start at zoomed-in state (scale 120%) */
+    100% { transform: scale(1); } /* End at the regular size (scale 100%) */
+}
+
+
+p{
+    font-size: 24px;
+    margin-top: 10px;
+    opacity: 0;/* Initially set opacity to 0 (fully transparent) */
+    animation: fadeIn 2s 4s forwards; /*apply the fade in animation with a delay of 3.5s*/
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+p {
+    animation-fill-mode: forwards;
+}
+@media(max-width: 768px) {
+    .zoom-in-out{
+        font-size: 40px;
+        animation-duration: 3.5s
+    }
+}
